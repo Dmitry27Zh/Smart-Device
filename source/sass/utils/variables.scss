@@ -1,5 +1,6 @@
 $font-family-first: "PT Mono", "Courier New", monospace;
-$font-family-second: "Roboto Condensed", sans-serif;
+$font-family-second: "Roboto Condensed", "Arial", sans-serif;
+$font-family-third: "Roboto", "Arial", sans-serif;
 
 $white: #ffffff;
 $black: #000000;
@@ -10,4 +11,7 @@ $special-gray: #626962;
 $decoration-gray: #ebebeb;
 $light-gray: #cdcdcd;
 $rare-gray: #fafafa;
+$logo-gray: #788891;
 
+$tablet-width-max: 1023px;
+$mobile-width-max: 767px;

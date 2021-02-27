@@ -24,3 +24,12 @@
     url("../fonts/Robotocondensedbold.woff2") format("woff2"),
     url("../fonts/Robotocondensedbold.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  src: local("Roboto"),
+    url("../fonts/Robotomedium.woff2") format("woff2"),
+    url("../fonts/Robotomedium.woff") format("woff");
+}

@@ -1,0 +1,13 @@
+.wrapper {
+  max-width: 1411px;
+  padding: 0 50px;
+
+  @media (min-width: 1511px) {
+    padding-left: calc((100vw - 1411px) * 0.497);
+    padding-right: calc((100vw - 1411px) * 0.503);
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 0 3.26vw;
+  }
+}
