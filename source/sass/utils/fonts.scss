@@ -2,17 +2,14 @@
   font-family: "PT Mono";
   font-weight: 400;
   font-style: normal;
-  src: local("PT Mono"),
-    url("../fonts/ptmono.woff2") format("woff2"),
-    url("../fonts/ptmono.woff") format("woff");
+  src: local("PT Mono"), url("../fonts/ptmono.woff2") format("woff2"), url("../fonts/ptmono.woff") format("woff");
 }
 
 @font-face {
   font-family: "Roboto Condensed";
   font-weight: 400;
   font-style: normal;
-  src: local("Roboto Condensed"),
-    url("../fonts/Robotocondensed.woff2") format("woff2"),
+  src: local("Roboto Condensed"), url("../fonts/Robotocondensed.woff2") format("woff2"),
     url("../fonts/Robotocondensed.woff") format("woff");
 }
 
@@ -20,16 +17,6 @@
   font-family: "Roboto Condensed";
   font-weight: 700;
   font-style: normal;
-  src: local("Roboto Condensed"),
-    url("../fonts/Robotocondensedbold.woff2") format("woff2"),
+  src: local("Roboto Condensed"), url("../fonts/Robotocondensedbold.woff2") format("woff2"),
     url("../fonts/Robotocondensedbold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Roboto";
-  font-weight: 500;
-  font-style: normal;
-  src: local("Roboto"),
-    url("../fonts/Robotomedium.woff2") format("woff2"),
-    url("../fonts/Robotomedium.woff") format("woff");
 }
