@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header wrapper">
-      <a class="header__logo">
+      <a class="header__logo logo">
         <svg class="header__logo-desktop" width="202" height="52" viewBox="0 0 202 52">
           <use xlink:href="img/svg/sprite.svg#logo-header"></use>
         </svg>
@@ -41,7 +41,7 @@
     </main>
     <footer class="footer">
       <div class="footer__wrapper wrapper">
-        <div class="footer__group">
+        <div class="footer__group wrapper">
           <a class="footer__logo logo logo--dark">
             <svg width="216" height="52" viewBox="0 0 216 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/svg/sprite.svg#logo-footer"></use>
@@ -72,9 +72,9 @@
             </li>
           </ul>
         </div>
-        <section class="footer__section footer__section--nav">
-          <h2>Разделы сайта</h2>
-          <nav class="nav">
+        <section class="footer__section footer__section--nav footer__section--no-js wrapper">
+          <h2>Разделы сайта<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
+          <nav class="nav footer__section-inner">
             <ul class="nav__list list-reset">
               <li class="nav__item">
                 <a href="#" class="link">О компании</a>
@@ -102,13 +102,10 @@
             </ul>
           </nav>
         </section>
-        <section class="footer__section footer__section--address">
-          <h2>Наш офис</h2>
-          <p>
-            г. Мытищи, Олимпийский проспект, д.10
-            <a href="tel:+74955894050">+7 (495) 589-40-50</a>
-            <a href="tel:+79250038767">+7 (925) 003-87-67</a>
-            <a href="tel:+792692608079">+7 (926) 926-080-79</a>
+        <section class="footer__section footer__section--address footer__section--no-js wrapper">
+          <h2>Наш офис<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
+          <p class="footer__section-inner">
+            г. Мытищи, Олимпийский проспект, д.10<a class="link" href="tel:+74955894050">+7 (495) 589-40-50</a><a class="link" href="tel:+79250038767">+7 (925) 003-87-67</a><a class="link" href="tel:+792692608079">+7 (926) 926-080-79</a>
           </p>
         </section>
       </div>
@@ -122,5 +119,6 @@
         <p class="footer__developer">Developed by wow studio</p>
       </section>
     </footer>
+    <script src="js/main/script.js"></script>
   </body>
 </html>

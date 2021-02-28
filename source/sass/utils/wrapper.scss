@@ -10,4 +10,8 @@
   @media (max-width: $tablet-width-max) {
     padding: 0 3.26vw;
   }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0 4.687vw;
+  }
 }
