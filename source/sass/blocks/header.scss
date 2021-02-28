@@ -1,8 +1,12 @@
 .header {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   padding-top: 33px;
-  background-color: $dark;
   color: $white;
 
   @media (max-width: $tablet-width-max) {
@@ -11,7 +15,7 @@
 }
 
 .header__logo {
-  margin-right: 30px;
+  margin-right: auto;
 }
 
 .header__logo-desktop {
@@ -32,11 +36,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: auto;
+  margin-left: -4.58vw;
+  max-width: 870px;
 }
 
 .header__contact {
-  margin-left: 6.35vw;
+  margin-left: 4.58vw;
 
   a {
     display: flex;
@@ -53,6 +58,12 @@
 
   svg {
     margin-right: 20px;
+  }
+
+  &--phone {
+    svg {
+      margin-right: 16px;
+    }
   }
 
   @media (max-width: $tablet-width-max) {
@@ -80,7 +91,7 @@
 }
 
 .header__callback {
-  margin-left: 1.98vw;
+  margin-left: 2.55vw;
   min-width: 180px;
 
   @media (max-width: $tablet-width-max) {

@@ -1,6 +1,7 @@
 .wrapper {
   max-width: 1411px;
   padding: 0 50px;
+  overflow-x: hidden;
 
   @media (min-width: 1511px) {
     padding-left: calc((100vw - 1411px) * 0.497);

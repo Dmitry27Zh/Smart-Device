@@ -37,7 +37,18 @@
       <button class="button header__callback">Заказать звонок</button>
     </header>
     <main>
-      <h1>заголовок</h1>
+      <section class="promo wrapper">
+        <div class="promo__text">
+          <h1 class="title">Печатные платы</h1>
+          <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+          <button class="promo__button button"><span class="promo__call-long">Получить бесплатную консультацию</span><span class="promo__call-short">Бесплатная консультация</span></button>
+        </div>
+        <div class="promo__image">
+          <picture>
+            <img src="img/boards@1x.png" srcset="img/boards@2x.png 2x" width="705" height="515" alt="Платы">
+          </picture>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="footer__wrapper wrapper">
@@ -73,7 +84,7 @@
           </ul>
         </div>
         <section class="footer__section footer__section--nav footer__section--no-js wrapper">
-          <h2>Разделы сайта<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
+          <h2 class="title">Разделы сайта<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
           <nav class="nav footer__section-inner">
             <ul class="nav__list list-reset">
               <li class="nav__item">
@@ -103,7 +114,7 @@
           </nav>
         </section>
         <section class="footer__section footer__section--address footer__section--no-js wrapper">
-          <h2>Наш офис<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
+          <h2 class="title">Наш офис<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button></h2>
           <p class="footer__section-inner">
             г. Мытищи, Олимпийский проспект, д.10<a class="link" href="tel:+74955894050">+7 (495) 589-40-50</a><a class="link" href="tel:+79250038767">+7 (925) 003-87-67</a><a class="link" href="tel:+792692608079">+7 (926) 926-080-79</a>
           </p>
@@ -119,6 +130,6 @@
         <p class="footer__developer">Developed by wow studio</p>
       </section>
     </footer>
-    <script src="js/main/script.js"></script>
+    <script src="js/main/accordeon.js"></script>
   </body>
 </html>
