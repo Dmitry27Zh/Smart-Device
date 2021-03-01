@@ -1,0 +1,105 @@
+.features {
+  padding-top: 110px;
+  padding-bottom: 110px;
+
+  @media (max-width: $tablet-width-max) {
+    padding-top: 54px;
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 37px;
+  }
+}
+
+.features__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -30px;
+
+  @media (max-width: $mobile-width-max) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -30px;
+  }
+}
+
+.features__item {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  padding: 98px 43px 65px;
+  width: 48.7%;
+  background-color: $white;
+  border: 1px solid $decoration-gray;
+  border-left-width: 3px;
+  border-left-color: $blue;
+
+  &:hover {
+    background-color: $blue;
+    border-color: $blue;
+
+    svg {
+      fill: $white;
+    }
+
+    h3,
+    p {
+      color: $white;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 43px;
+    top: 40px;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    color: $blue;
+    font-size: 24px;
+    line-height: 33.75px;
+  }
+
+  p {
+    margin: 0;
+    color: $dark-gray;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding: 69px 25px 22px;
+    border-left-width: 2px;
+
+    svg {
+      left: 25px;
+      top: 24px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 71px;
+    margin-bottom: 30px;
+    width: 290px;
+
+    &--timing {
+      padding-bottom: 26px;
+    }
+
+    &--suppliers {
+      padding-right: 12px;
+      padding-bottom: 30px;
+    }
+
+    &--confidentiality {
+      padding-right: 12px;
+      padding-bottom: 59px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 28.13px;
+    }
+  }
+}

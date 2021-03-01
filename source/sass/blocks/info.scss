@@ -1,0 +1,100 @@
+.info {
+  padding-bottom: 110px;
+  color: $dark-gray;
+
+  h2 {
+    margin-bottom: 18px;
+    font-size: 36px;
+    line-height: 50.63px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:first-of-type {
+    margin-bottom: 23px;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-bottom: 83px;
+
+    h2 {
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    p:first-of-type {
+      margin-bottom: 21px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 65px;
+
+    h2 {
+      font-size: 28px;
+      line-height: 39px;
+    }
+
+    p:first-of-type {
+      margin-bottom: 44px;
+    }
+  }
+}
+
+.info__wrapper {
+  position: relative;
+  padding-left: 180px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 180px;
+    height: 317px;
+    background-image: url("../img/year@1x.png");
+    background-size: cover;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-left: 185px;
+
+    &::before {
+      height: 361px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.info__text-long {
+  @media (max-width: $tablet-width-max) {
+    display: none;
+  }
+}
+
+.info__text-short {
+  display: none;
+
+  @media (max-width: $tablet-width-max) {
+    display: inline-block;
+    margin-left: -10px;
+  }
+}
+
+.info__link {
+  margin-top: 40px;
+  min-width: 180px;
+
+  @media (max-width: $mobile-width-max) {
+    margin-top: 30px;
+  }
+}
