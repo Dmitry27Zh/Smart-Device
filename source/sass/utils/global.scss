@@ -6,6 +6,7 @@ body {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100%;
+  min-width: 320px;
   margin: 0;
   font-family: $font-family-first;
   font-size: 16px;

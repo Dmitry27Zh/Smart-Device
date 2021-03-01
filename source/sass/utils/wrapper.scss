@@ -8,6 +8,19 @@
     padding-right: calc((100vw - 1411px) * 0.503);
   }
 
+  @media (min-width: $desktop-width-min) {
+    &--small {
+      padding: 0 74px;
+      max-width: 1170px;
+    }
+
+    @media (min-width: 1318px) {
+      &--small {
+        padding: 0 calc((100vw - 1170px) * 0.5);
+      }
+    }
+  }
+
   @media (max-width: $tablet-width-max) {
     padding: 0 3.26vw;
   }

@@ -40,10 +40,10 @@
   color: $white;
 
   h1 {
-    margin: 0;
     margin-bottom: 31px;
     font-size: 80px;
     line-height: 93.75px;
+    font-weight: 700;
     letter-spacing: 0.07em;
     text-transform: uppercase;
   }
@@ -119,6 +119,13 @@
   border-color: $blue;
   font-size: 16px;
   line-height: 18.75px;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+    background-color: $white;
+    border-color: $white;
+  }
 
   @media (max-width: $tablet-width-max) {
     margin-left: 48px;
