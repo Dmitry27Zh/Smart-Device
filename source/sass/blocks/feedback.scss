@@ -6,6 +6,17 @@
   background-position: 18.22% 161px, 10.15% -60px, right 30px;
   background-repeat: no-repeat;
   background-size: auto, 636px 636px;
+
+  @media (max-width: $tablet-width-max) {
+    padding-top: 83px;
+    padding-bottom: 103px;
+    background-image: none;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 33px;
+    padding-bottom: 41px;
+  }
 }
 
 .feedback__inner {
@@ -15,6 +26,19 @@
   p {
     margin-top: 7px;
     margin-bottom: 49px;
+  }
+
+  @media (max-width: 1125px) {
+    padding-left: 40%;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-left: 9.33%;
+    padding-right: 8.77%;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding: 0;
   }
 }
 
@@ -43,6 +67,7 @@
     height: 154px;
     margin-top: 40px;
     margin-bottom: 43px;
+    resize: none;
   }
 
   ::-webkit-input-placeholder {
@@ -56,11 +81,26 @@
       color: $blue;
     }
   }
+
+  @media (max-width: $tablet-width-max) {
+    textarea {
+      height: 159px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    textarea {
+      margin-top: 0;
+      margin-bottom: 30px;
+      height: 104px;
+    }
+  }
 }
 
 .feedback__form-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   input,
   button,
@@ -78,6 +118,8 @@
     position: relative;
     box-sizing: border-box;
     padding-left: 43px;
+    font-size: 14px;
+    line-height: 15.68px;
 
     &::before,
     &::after {
@@ -102,6 +144,21 @@
       border-top: none;
       border-right: none;
       transform: rotate(-45deg);
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    flex-direction: column;
+
+    input,
+    button,
+    label {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    label {
+      margin-bottom: 0;
     }
   }
 }
