@@ -95,7 +95,7 @@
             </li>
           </ul>
         </section>
-        <section class="info wrapper wrapper--small">
+        <section class="info section wrapper wrapper--small">
           <div class="info__wrapper">
             <h2 class="title">О компании</h2>
             <p>
@@ -112,6 +112,26 @@
               >
             </p>
             <a href="#" class="info__link button button--colorized">Подробнее</a>
+          </div>
+        </section>
+        <section class="feedback section wrapper wrapper--small">
+          <div class="feedback__inner">
+            <h2 class="title">Остались вопросы? Задайте их нам!</h2>
+            <p>Мы проконсультируем Вас бесплатно</p>
+            <form action="#" method="POST" class="feedback__form">
+              <div class="feedback__form-wrapper">
+                <label for="feedback-name" class="visually-hidden">Введите ваше имя</label>
+                <input type="text" id="feedback-name" placeholder="Имя" required />
+                <label for="feedback-tel" class="visually-hidden">Введите ваш номер телефона</label>
+                <input type="tel" id="feedback-tel" placeholder="Телефон" required />
+              </div>
+              <textarea placeholder="Ваш вопрос"></textarea>
+              <div class="feedback__form-wrapper">
+                <button class="button" type="submit">Задать вопрос</button>
+                <input type="checkbox" id="feedback-approval" class="visually-hidden" checked />
+                <label for="feedback-approval">Я согласен на обработку персональных данных</label>
+              </div>
+            </form>
           </div>
         </section>
       </div>

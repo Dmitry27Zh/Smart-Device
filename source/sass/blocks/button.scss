@@ -15,14 +15,20 @@
   text-transform: uppercase;
   text-align: center;
 
-  &--colorized {
-    color: $blue;
-    border-color: $blue;
-  }
-
   &:hover,
   &:focus {
     border-color: $blue;
     color: $blue;
+  }
+
+  &--colorized {
+    color: $blue;
+    border-color: $blue;
+
+    &:hover,
+    &:focus {
+      background-color: $blue;
+      color: $white;
+    }
   }
 }
