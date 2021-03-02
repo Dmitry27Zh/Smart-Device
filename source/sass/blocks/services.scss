@@ -1,0 +1,132 @@
+.services {
+  padding-top: 93px;
+  padding-bottom: 127px;
+  background-color: $dark;
+  color: $white;
+
+  h2 {
+    margin-bottom: 47px;
+    color: rgba($white, 0.6);
+  }
+
+  @media (max-width: $tablet-width-max) {
+    padding-top: 53px;
+    padding-bottom: 78px;
+
+    h2 {
+      width: 613px;
+      color: $white;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    padding-bottom: 64px;
+
+    h2 {
+      width: auto;
+    }
+  }
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -46px;
+
+  @media (max-width: $tablet-width-max) {
+    display: block;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    margin-bottom: -30px;
+  }
+}
+
+.services__item {
+  position: relative;
+  margin-bottom: 46px;
+  width: 370px;
+  height: 620px;
+  max-width: 370px;
+  max-height: 620px;
+
+  a:hover,
+  a:focus {
+    img {
+      filter: saturate(1);
+    }
+  }
+
+  h3 {
+    position: absolute;
+    top: 53px;
+    left: 43px;
+    width: 170px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: 27px;
+    bottom: 27px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid $white;
+    border-left: none;
+    border-top: none;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 63px;
+    height: 63px;
+    background-color: $blue;
+  }
+
+  @media (max-width: 1317px) {
+    width: 26.62vw;
+    height: 42.5vw;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    width: 100%;
+    height: 33.33vw;
+    max-width: none;
+
+    h3 {
+      top: 43px;
+      left: 43px;
+    }
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-bottom: 30px;
+    height: 80vw;
+
+    h3 {
+      top: 33px;
+      left: 36px;
+    }
+  }
+}
+
+.services__image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0);
+  }
+}
