@@ -162,9 +162,17 @@
             <form action="#" method="POST" class="feedback__form">
               <div class="feedback__form-wrapper">
                 <label for="feedback-name" class="visually-hidden">Введите ваше имя</label>
-                <input type="text" id="feedback-name" placeholder="Имя" required />
+                <input type="text" id="feedback-name" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё]+$" required />
                 <label for="feedback-tel" class="visually-hidden">Введите ваш номер телефона</label>
-                <input type="tel" id="feedback-tel" placeholder="Телефон" required />
+                <input
+                  type="tel"
+                  id="feedback-tel"
+                  placeholder="Телефон"
+                  pattern="\+7\([0-9]{3}\)\d{3}[-]\d{2}[-]\d{2}"
+                  minlength="16"
+                  maxlength="16"
+                  required
+                />
               </div>
               <textarea placeholder="Ваш вопрос"></textarea>
               <div class="feedback__form-wrapper">
@@ -271,20 +279,31 @@
         <form action="#" method="POST" class="feedback__form">
           <div class="feedback__form-wrapper">
             <label for="feedback-name" class="visually-hidden">Введите ваше имя</label>
-            <input type="text" id="feedback-name" placeholder="Имя" required />
-            <label for="feedback-tel" class="visually-hidden">Введите ваш номер телефона</label>
-            <input type="tel" id="feedback-tel" placeholder="Телефон" required />
+            <input type="text" id="feedback-name" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё]+$" required />
+            <label for="feedback-modal-tel" class="visually-hidden">Введите ваш номер телефона</label>
+            <input
+              type="tel"
+              id="feedback-modal-tel"
+              placeholder="Телефон"
+              pattern="\+7\([0-9]{3}\)\d{3}[-]\d{2}[-]\d{2}"
+              minlength="16"
+              maxlength="16"
+              required
+            />
           </div>
           <textarea placeholder="Ваш вопрос"></textarea>
           <div class="feedback__form-wrapper">
             <button class="button" type="submit">Задать вопрос</button>
-            <input type="checkbox" id="feedback-approval" class="visually-hidden" checked />
-            <label for="feedback-approval">Я согласен на обработку персональных данных</label>
+            <input type="checkbox" id="feedback-modal-approval" class="visually-hidden" checked />
+            <label for="feedback-modal-approval">Я согласен на обработку персональных данных</label>
           </div>
         </form>
         <button class="modal__close" aria-label="Закрыть модальное окно"></button>
       </div>
     </section>
     <script src="js/main/accordeon.js"></script>
+    <script src="js/main/validation.js"></script>
+    <script src="js/main/modal.js"></script>
+    <script src="js/main/main.js"></script>
   </body>
 </html>
