@@ -7,6 +7,66 @@
   background-repeat: no-repeat;
   background-size: auto, 636px 636px;
 
+  &--modal {
+    background-image: none;
+
+    .feedback__inner {
+      box-sizing: border-box;
+      width: 490px;
+      height: 605px;
+      padding: 33px 39px 36px;
+      background-color: $blue;
+
+      h2 {
+        font-size: 28px;
+        line-height: 39.38px;
+      }
+
+      p {
+        margin-top: 12px;
+        margin-bottom: 30px;
+      }
+
+      input {
+        padding: 13px 24px;
+      }
+
+      textarea {
+        margin-top: 0;
+        margin-bottom: 30px;
+        height: 104px;
+      }
+
+      label[for="feedback-approval"] {
+        padding-left: 52px;
+        margin-top: 4px;
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          left: 4.5px;
+        }
+      }
+    }
+
+    .feedback__form-wrapper {
+      flex-direction: column;
+
+      input,
+      button,
+      label {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   @media (max-width: $tablet-width-max) {
     padding-top: 83px;
     padding-bottom: 103px;
