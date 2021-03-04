@@ -88,6 +88,10 @@
       margin-right: 0;
     }
   }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: 7.3vw;
+  }
 }
 
 .header__callback {

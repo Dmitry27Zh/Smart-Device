@@ -11,7 +11,7 @@
 
   @media (max-width: $tablet-width-max) {
     padding-top: 53px;
-    padding-bottom: 78px;
+    padding-bottom: 64px;
 
     h2 {
       width: 613px;
@@ -24,6 +24,8 @@
 
     h2 {
       width: auto;
+      margin-bottom: 41px;
+      margin-left: 10px;
     }
   }
 }
@@ -112,8 +114,14 @@
     height: 80vw;
 
     h3 {
-      top: 33px;
+      top: 19px;
       left: 36px;
+    }
+
+    &--parts {
+      h3 {
+        top: 25px;
+      }
     }
   }
 }

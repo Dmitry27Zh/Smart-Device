@@ -12,7 +12,7 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding-top: 188px;
+    padding-top: 189px;
     padding-bottom: 163px;
     background-image: url("../img/main-bg-tablet@1x.png");
 
@@ -60,7 +60,7 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 18px;
+      top: 14px;
       width: 66px;
       height: 2px;
       background-color: $white;
@@ -80,6 +80,7 @@
 
     p {
       padding-left: 48px;
+      margin-bottom: 51px;
       font-size: 18px;
       line-height: 28.22px;
 
@@ -105,7 +106,7 @@
     }
 
     p {
-      margin-bottom: 42px;
+      margin-bottom: 37px;
       font-size: 16px;
       line-height: 25.09px;
     }
@@ -115,6 +116,8 @@
 .promo__button {
   min-width: 56.68%;
   margin-left: 94px;
+  padding-top: 20px;
+  padding-bottom: 18px;
   background-color: $blue;
   border-color: $blue;
   font-size: 16px;
@@ -169,8 +172,8 @@
     content: "";
     position: absolute;
     z-index: -1;
-    top: -140px;
-    left: -10px;
+    top: -138px;
+    left: -3px;
     width: 635px;
     height: 635px;
     background-image: url("../img/svg/triangles.svg");
@@ -198,10 +201,29 @@
     right: -7px;
 
     &::before {
-      top: -130px;
-      left: 135px;
+      top: -136px;
+      left: 128px;
       width: 479px;
       height: 479px;
     }
+  }
+}
+
+.promo__scroll {
+  position: absolute;
+  left: -38px;
+  bottom: -148px;
+  transform: rotate(-90deg);
+  font-size: 14px;
+  line-height: 15.68px;
+  color: rgba($white, 0.5);
+
+  &:hover,
+  &:focus {
+    color: rgba($white, 0.8);
+  }
+
+  @media (max-width: $tablet-width-max) {
+    display: none;
   }
 }
