@@ -1,22 +1,27 @@
 'use strict';
 
 (function () {
-  const OPENED_SECTION_CLASS = 'footer__section--opened';
-  const sectionElements = document.querySelectorAll('.footer__section');
+  const AccordeonClasslist = {
+    ACCORDEON: '.accordeon',
+    TOGGLE: '.accordeon__toggle',
+    NO_JS: 'accordeon--no-js',
+    OPENED: 'accordeon--opened',
+  };
+  const accordeons = document.querySelectorAll(AccordeonClasslist.ACCORDEON);
 
-  if (sectionElements) {
-    for (let sectionElement of sectionElements) {
-      sectionElement.classList.remove('footer__section--no-js');
-      sectionElement.querySelector('.footer__section-toggle').addEventListener('click', () => {
-        if (sectionElement.classList.contains(OPENED_SECTION_CLASS)) {
-          sectionElement.classList.remove(OPENED_SECTION_CLASS);
+  if (accordeons) {
+    for (let accordeon of accordeons) {
+      accordeon.classList.remove(AccordeonClasslist.NO_JS);
+      accordeon.querySelector(AccordeonClasslist.TOGGLE).addEventListener('click', () => {
+        if (accordeon.classList.contains(AccordeonClasslist.OPENED)) {
+          accordeon.classList.remove(AccordeonClasslist.OPENED);
           return;
         }
-        const openedSection = [...sectionElements].find((section) => section.classList.contains(OPENED_SECTION_CLASS));
+        const openedSection = [...accordeons].find((section) => section.classList.contains(AccordeonClasslist.OPENED));
         if (openedSection) {
-          openedSection.classList.remove(OPENED_SECTION_CLASS);
+          openedSection.classList.remove(AccordeonClasslist.OPENED);
         }
-        sectionElement.classList.add(OPENED_SECTION_CLASS);
+        accordeon.classList.add(AccordeonClasslist.OPENED);
       });
     }
   }

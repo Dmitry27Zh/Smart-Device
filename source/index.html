@@ -162,9 +162,17 @@
             <form action="#" method="POST" class="feedback__form">
               <div class="feedback__form-wrapper">
                 <label for="feedback-name" class="visually-hidden">Введите ваше имя</label>
-                <input type="text" id="feedback-name" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё]+$" required />
+                <input
+                  class="name-js"
+                  type="text"
+                  id="feedback-name"
+                  placeholder="Имя"
+                  pattern="^[A-Za-zА-Яа-яЁё]+$"
+                  required
+                />
                 <label for="feedback-tel" class="visually-hidden">Введите ваш номер телефона</label>
                 <input
+                  class="tel-js"
                   type="tel"
                   id="feedback-tel"
                   placeholder="Телефон"
@@ -174,7 +182,7 @@
                   required
                 />
               </div>
-              <textarea placeholder="Ваш вопрос"></textarea>
+              <textarea class="message-js" placeholder="Ваш вопрос"></textarea>
               <div class="feedback__form-wrapper">
                 <button class="button" type="submit">Задать вопрос</button>
                 <input type="checkbox" id="feedback-approval" class="visually-hidden" checked />
@@ -218,11 +226,14 @@
             </li>
           </ul>
         </div>
-        <section class="footer__section footer__section--nav footer__section--no-js wrapper">
+        <section class="footer__section footer__section--nav accordeon accordeon--no-js wrapper">
           <h2 class="title">
-            Разделы сайта<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button>
+            Разделы сайта<button
+              class="footer__section-toggle accordeon__toggle"
+              aria-label="Открыть / закрыть раздел"
+            ></button>
           </h2>
-          <nav class="nav footer__section-inner">
+          <nav class="nav footer__section-inner accordeon__inner">
             <ul class="nav__list list-reset">
               <li class="nav__item">
                 <a href="#" class="link">О компании</a>
@@ -250,11 +261,14 @@
             </ul>
           </nav>
         </section>
-        <section class="footer__section footer__section--address footer__section--no-js wrapper">
+        <section class="footer__section footer__section--address accordeon accordeon--no-js wrapper">
           <h2 class="title">
-            Наш офис<button class="footer__section-toggle" aria-label="Открыть / закрыть раздел"></button>
+            Наш офис<button
+              class="footer__section-toggle accordeon__toggle"
+              aria-label="Открыть / закрыть раздел"
+            ></button>
           </h2>
-          <p class="footer__section-inner">
+          <p class="footer__section-inner accordeon__inner">
             г. Мытищи, Олимпийский проспект, д.10<a class="link" href="tel:+74955894050">+7 (495) 589-40-50</a
             ><a class="link" href="tel:+79250038767">+7 (925) 003-87-67</a
             ><a class="link" href="tel:+792692608079">+7 (926) 926-080-79</a>
@@ -278,10 +292,18 @@
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <form action="#" method="POST" class="feedback__form">
           <div class="feedback__form-wrapper">
-            <label for="feedback-name" class="visually-hidden">Введите ваше имя</label>
-            <input type="text" id="feedback-name" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё]+$" required />
+            <label for="feedback-modal-name" class="visually-hidden">Введите ваше имя</label>
+            <input
+              class="name-js"
+              type="text"
+              id="feedback-modal-name"
+              placeholder="Имя"
+              pattern="^[A-Za-zА-Яа-яЁё]+$"
+              required
+            />
             <label for="feedback-modal-tel" class="visually-hidden">Введите ваш номер телефона</label>
             <input
+              class="tel-js"
               type="tel"
               id="feedback-modal-tel"
               placeholder="Телефон"
@@ -291,7 +313,7 @@
               required
             />
           </div>
-          <textarea placeholder="Ваш вопрос"></textarea>
+          <textarea class="message-js" placeholder="Ваш вопрос"></textarea>
           <div class="feedback__form-wrapper">
             <button class="button" type="submit">Задать вопрос</button>
             <input type="checkbox" id="feedback-modal-approval" class="visually-hidden" checked />
@@ -301,9 +323,6 @@
         <button class="modal__close" aria-label="Закрыть модальное окно"></button>
       </div>
     </section>
-    <script src="js/main/accordeon.js"></script>
-    <script src="js/main/validation.js"></script>
-    <script src="js/main/modal.js"></script>
-    <script src="js/main/main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

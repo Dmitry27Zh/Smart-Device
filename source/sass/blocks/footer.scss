@@ -186,26 +186,6 @@
       margin: 0;
       width: auto;
     }
-
-    &--no-js {
-      .footer__section-toggle {
-        display: none;
-      }
-
-      .footer__section-inner {
-        display: block;
-      }
-    }
-
-    &--opened {
-      .footer__section-toggle::before {
-        display: none;
-      }
-
-      .footer__section-inner {
-        display: block;
-      }
-    }
   }
 }
 
