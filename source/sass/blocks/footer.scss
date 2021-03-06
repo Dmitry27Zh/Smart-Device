@@ -220,8 +220,7 @@
   }
 }
 
-.footer__section-inner,
-p.footer__section-inner {
+.footer__section-inner {
   @media (max-width: $mobile-width-max) {
     display: none;
     margin-top: 31px;
@@ -246,6 +245,10 @@ p.footer__section-inner {
     display: block;
     margin-left: 7.39vw;
     margin-right: 1.82vw;
+  }
+
+  p {
+    margin: 0;
   }
 
   @media (max-width: $tablet-width-max) {

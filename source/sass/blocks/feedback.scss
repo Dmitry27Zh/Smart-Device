@@ -113,6 +113,8 @@
 
   @media (max-width: $mobile-width-max) {
     padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
 
     p {
       margin-bottom: 25px;

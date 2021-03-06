@@ -130,6 +130,22 @@
     border-color: $white;
   }
 
+  span {
+    &:first-child {
+      @media (max-width: $mobile-width-max) {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      display: none;
+
+      @media (max-width: $mobile-width-max) {
+        display: inline-block;
+      }
+    }
+  }
+
   @media (max-width: $tablet-width-max) {
     margin-left: 48px;
     min-width: 379px;
@@ -141,7 +157,7 @@
   }
 }
 
-.promo__call-short {
+/* .promo__call-short {
   display: none;
 
   @media (max-width: $mobile-width-max) {
@@ -153,7 +169,7 @@
   @media (max-width: $mobile-width-max) {
     display: none;
   }
-}
+} */
 
 .promo__image {
   position: absolute;

@@ -1,4 +1,12 @@
 .section {
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-family: $font-family-second;
+    font-weight: 400;
+  }
+
   h2 {
     font-size: 36px;
     line-height: 50.63px;

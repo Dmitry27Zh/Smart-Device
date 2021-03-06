@@ -33,7 +33,6 @@
       margin-bottom: 23px;
     }
 
-
     p:first-of-type {
       margin-bottom: 44px;
     }
@@ -69,21 +68,6 @@
     &::before {
       display: none;
     }
-  }
-}
-
-.info__text-long {
-  @media (max-width: $tablet-width-max) {
-    display: none;
-  }
-}
-
-.info__text-short {
-  display: none;
-
-  @media (max-width: $tablet-width-max) {
-    display: inline-block;
-    margin-left: -10px;
   }
 }
 
