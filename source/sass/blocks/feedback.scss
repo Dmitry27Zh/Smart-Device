@@ -7,6 +7,14 @@
   background-repeat: no-repeat;
   background-size: auto, 665px 665px;
 
+  @media (max-width: 1446px) {
+    background-position-x: 0, 0, right;
+  }
+
+  @media (max-width: 1125px) {
+    background-size: 400px 226px, 550px 550px, auto;
+  }
+
   &--modal {
     background-image: none;
 
