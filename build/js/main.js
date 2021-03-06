@@ -153,17 +153,59 @@
 'use strict';
 
 (function () {
-  const pageTelInputElement = document.querySelector('#feedback-tel');
+  const feedbackFormElements = document.querySelectorAll('.feedback__form');
+  let isStorageSupport = true;
+  let storageName = null;
+  let storageTel = null;
+  let storageMessage = null;
+
+  try {
+    storageName = localStorage.getItem('user-name');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  if (isStorageSupport) {
+    storageTel = localStorage.getItem('user-tel');
+    storageMessage = localStorage.getItem('user-message');
+  }
+
+  const activateLocalStorage = (formElement, nameInputElement, telInputElement, textMessageElement) => {
+    if (isStorageSupport) {
+      if (storageName) {
+        nameInputElement.value = storageName;
+      }
+      if (storageTel) {
+        telInputElement.value = storageTel;
+      }
+      if (storageMessage) {
+        textMessageElement.value = storageMessage;
+      }
+    }
+    formElement.addEventListener('submit', () => {
+      localStorage.setItem('user-name', nameInputElement.value);
+      localStorage.setItem('user-tel', telInputElement.value);
+      if (textMessageElement.value) {
+        localStorage.setItem('user-message', textMessageElement.value);
+      }
+    });
+  };
+
+  for (let feedbackFormElement of feedbackFormElements) {
+    const nameInputElement = feedbackFormElement.querySelector('[id^="feedback-name"]');
+    const telInputElement = feedbackFormElement.querySelector('[id^="feedback-tel"]');
+    const textMessageElement = feedbackFormElement.querySelector('[id^="feedback-message"]');
+    activateLocalStorage(feedbackFormElement, nameInputElement, telInputElement, textMessageElement);
+    window.validation(telInputElement)();
+  }
+})();
+
+'use strict';
+
+(function () {
   const feedbackModalElement = document.querySelector('.feedback--modal');
-  const modalNameInputElement = feedbackModalElement.querySelector('#feedback-modal-name');
-  const modalTelInputElement = feedbackModalElement.querySelector('#feedback-modal-tel');
+  const modalNameInputElement = feedbackModalElement.querySelector('#feedback-name-modal');
   const openFeedbackModalElement = document.querySelector('.header__callback');
-
-  const initPageTelValidation = window.validation(pageTelInputElement);
-  initPageTelValidation();
-
-  const initModalTelValidation = window.validation(modalTelInputElement);
-  initModalTelValidation();
 
   const initModal = window.modal;
   initModal(feedbackModalElement, openFeedbackModalElement, () => modalNameInputElement.focus());

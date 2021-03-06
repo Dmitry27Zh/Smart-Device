@@ -38,4 +38,12 @@
       }
     });
   };
+
+  for (let feedbackFormElement of feedbackFormElements) {
+    const nameInputElement = feedbackFormElement.querySelector('[id^="feedback-name"]');
+    const telInputElement = feedbackFormElement.querySelector('[id^="feedback-tel"]');
+    const textMessageElement = feedbackFormElement.querySelector('[id^="feedback-message"]');
+    activateLocalStorage(feedbackFormElement, nameInputElement, telInputElement, textMessageElement);
+    window.validation(telInputElement)();
+  }
 })();

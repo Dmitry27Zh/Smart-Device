@@ -89,6 +89,7 @@ gulp.task('javascript', function () {
     'source/js/main/modal.js',
     'source/js/main/validation.js',
     'source/js/main/text.js',
+    'source/js/main/feedbackForm.js',
     'source/js/main/main.js',
   ])
       .pipe(concat('main.js'))
