@@ -1,20 +1,20 @@
-.accordeon {
+.accordion {
   &--no-js {
-    .accordeon__toggle {
+    .accordion__toggle {
       display: none;
     }
 
-    .accordeon__inner {
+    .accordion__inner {
       display: block;
     }
   }
 
   &--opened {
-    .accordeon__toggle::before {
+    .accordion__toggle::before {
       display: none;
     }
 
-    .accordeon__inner {
+    .accordion__inner {
       display: block;
     }
   }
