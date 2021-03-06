@@ -11,7 +11,7 @@
 
   @media (max-width: $tablet-width-max) {
     padding-top: 53px;
-    padding-bottom: 64px;
+    padding-bottom: 80px;
 
     h2 {
       width: 613px;
@@ -20,7 +20,7 @@
   }
 
   @media (max-width: $mobile-width-max) {
-    padding-bottom: 64px;
+    padding-bottom: 62px;
 
     h2 {
       width: auto;
@@ -40,7 +40,7 @@
     display: block;
   }
 
-  @media (max-width: $tablet-width-max) {
+  @media (max-width: $mobile-width-max) {
     margin-bottom: -30px;
   }
 }
@@ -107,11 +107,22 @@
       top: 43px;
       left: 43px;
     }
+
+    &--parts {
+      h3 {
+        top: 51px;
+        left: 45px;
+      }
+    }
   }
 
   @media (max-width: $mobile-width-max) {
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     height: 80vw;
+    max-width: 400px;
+    max-height: 354px;
 
     h3 {
       top: 19px;

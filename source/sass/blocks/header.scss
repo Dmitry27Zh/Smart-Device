@@ -12,6 +12,10 @@
   @media (max-width: $tablet-width-max) {
     padding-top: 20px;
   }
+
+  @media (max-width: $mobile-width-max) {
+    padding-top: 17px;
+  }
 }
 
 .header__logo {

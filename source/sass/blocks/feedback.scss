@@ -83,8 +83,8 @@
   }
 
   @media (max-width: $mobile-width-max) {
-    padding-top: 33px;
-    padding-bottom: 41px;
+    padding-top: 30px;
+    padding-bottom: 44px;
   }
 }
 
@@ -115,7 +115,7 @@
     padding: 0;
 
     p {
-      margin-bottom: 19px;
+      margin-bottom: 25px;
     }
   }
 }
@@ -169,9 +169,14 @@
   }
 
   @media (max-width: $mobile-width-max) {
+    input {
+      padding: 15px 17px;
+    }
+
     textarea {
+      padding: 14px 17px;
       margin-top: 0;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
       height: 104px;
     }
   }
@@ -247,11 +252,15 @@
       padding-left: 35px;
 
       &::before {
+        top: 1px;
         left: 0;
+        width: 15px;
+        height: 14px;
       }
 
       &::after {
-        left: 7.5px;
+        top: 4px;
+        left: 5.5px;
       }
     }
   }
