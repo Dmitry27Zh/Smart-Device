@@ -85,6 +85,7 @@ gulp.task('html', function () {
 
 gulp.task('javascript', function () {
   return gulp.src([
+    'source/js/main/common.js',
     'source/js/main/accordion.js',
     'source/js/main/modal.js',
     'source/js/main/validation.js',

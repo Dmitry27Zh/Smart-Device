@@ -5,13 +5,15 @@
 
   const formatTel = ([...tel]) => {
     let result = TEL_MASK;
-    for (let number of tel.slice(3).filter(Number)) {
+    for (let number of tel.slice(3).filter(isFinite)) {
       result = result.replace('x', number);
     }
     return result.indexOf('x') > 0 ? result.slice(0, result.indexOf('x')) : result;
   };
 
-  window.validation = (telInputElement) => {
+  window.validation = {};
+
+  window.validation.initTel = (telInputElement) => {
     let isErasing = false;
 
     const documentKeydownHandler = (evt) => {

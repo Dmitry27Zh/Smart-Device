@@ -6,8 +6,8 @@
     TABLET_MAX: 1023,
   };
 
-  const textBlockToEllipsize = document.querySelector('.info__wrapper p:last-of-type');
-  const initialTextContent = textBlockToEllipsize.innerText;
+  const textBlockToEllipsize = document.querySelector('.info__text-bottom p');
+  const initialTextContent = textBlockToEllipsize && textBlockToEllipsize.innerText;
 
   const ellipsize = (element, wordSeparator) => {
     const words = initialTextContent.split(' ');
@@ -15,16 +15,17 @@
     element.innerText = words.slice(0, indexOfSepearator).join(' ') + '..';
   };
 
-  const screenSizeChangeHandler = () => {
-    if (document.documentElement.clientWidth <= Breakpoints.TABLET_MAX) {
+  const initEllipsize = () => {
+    if (document.documentElement.clientWidth <= Breakpoints.TABLET_MAX && textBlockToEllipsize.dataset.wordSeparator) {
       ellipsize(textBlockToEllipsize, textBlockToEllipsize.dataset.wordSeparator);
       return;
     }
     textBlockToEllipsize.innerText = initialTextContent;
   };
 
-
-  window.addEventListener('resize', screenSizeChangeHandler);
-
-  window.addEventListener('orientationchange', screenSizeChangeHandler);
+  window.common.startActionWithCheck([textBlockToEllipsize], () => {
+    initEllipsize();
+    window.addEventListener('resize', initEllipsize);
+    window.addEventListener('orientationchange', initEllipsize);
+  });
 })();

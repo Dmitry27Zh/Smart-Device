@@ -7,8 +7,10 @@
     OVERLAY: '.modal__overlay',
   };
 
+  window.modal = {};
 
-  window.modal = (modalElement, openButton, action) => {
+
+  window.modal.init = (modalElement, openButton, action) => {
     openButton.addEventListener('click', () => {
       modalElement.classList.add(ClassName.SHOW_ELEMENT);
       document.body.classList.add('lock');

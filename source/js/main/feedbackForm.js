@@ -21,21 +21,34 @@
   const activateLocalStorage = (formElement, nameInputElement, telInputElement, textMessageElement) => {
     if (isStorageSupport) {
       if (storageName) {
-        nameInputElement.value = storageName;
+        window.common.startActionWithCheck([nameInputElement], () => {
+          nameInputElement.value = storageName;
+        });
+
       }
       if (storageTel) {
-        telInputElement.value = storageTel;
+        window.common.startActionWithCheck([telInputElement], () => {
+          telInputElement.value = storageTel;
+        });
       }
       if (storageMessage) {
-        textMessageElement.value = storageMessage;
+        window.common.startActionWithCheck([textMessageElement], () => {
+          textMessageElement.value = storageMessage;
+        });
       }
     }
     formElement.addEventListener('submit', () => {
-      localStorage.setItem('user-name', nameInputElement.value);
-      localStorage.setItem('user-tel', telInputElement.value);
-      if (textMessageElement.value) {
-        localStorage.setItem('user-message', textMessageElement.value);
-      }
+      window.common.startActionWithCheck([nameInputElement], () => {
+        localStorage.setItem('user-name', nameInputElement.value);
+      });
+      window.common.startActionWithCheck([telInputElement], () => {
+        localStorage.setItem('user-tel', telInputElement.value);
+      });
+      window.common.startActionWithCheck([textMessageElement], () => {
+        if (textMessageElement.value) {
+          localStorage.setItem('user-message', textMessageElement.value);
+        }
+      });
     });
   };
 
@@ -44,6 +57,9 @@
     const telInputElement = feedbackFormElement.querySelector('[id^="feedback-tel"]');
     const textMessageElement = feedbackFormElement.querySelector('[id^="feedback-message"]');
     activateLocalStorage(feedbackFormElement, nameInputElement, telInputElement, textMessageElement);
-    window.validation(telInputElement)();
+    window.common.startActionWithCheck([telInputElement], () => {
+      window.validation.initTel(telInputElement)();
+    });
   }
+
 })();

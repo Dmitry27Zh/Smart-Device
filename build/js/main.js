@@ -1,6 +1,20 @@
 'use strict';
 
 (function () {
+  const startActionWithCheck = (elementsList, action) => {
+    if (elementsList.length > 0 && elementsList.every((element) => element)) {
+      action();
+    }
+  };
+
+  window.common = {
+    startActionWithCheck,
+  };
+})();
+
+'use strict';
+
+(function () {
   const accordionClasslist = {
     accordion: '.accordion',
     TOGGLE: '.accordion__toggle',
@@ -9,21 +23,19 @@
   };
   const accordions = document.querySelectorAll(accordionClasslist.accordion);
 
-  if (accordions) {
-    for (let accordion of accordions) {
-      accordion.classList.remove(accordionClasslist.NO_JS);
-      accordion.querySelector(accordionClasslist.TOGGLE).addEventListener('click', () => {
-        if (accordion.classList.contains(accordionClasslist.OPENED)) {
-          accordion.classList.remove(accordionClasslist.OPENED);
-          return;
-        }
-        const openedSection = [...accordions].find((section) => section.classList.contains(accordionClasslist.OPENED));
-        if (openedSection) {
-          openedSection.classList.remove(accordionClasslist.OPENED);
-        }
-        accordion.classList.add(accordionClasslist.OPENED);
-      });
-    }
+  for (let accordion of accordions) {
+    accordion.classList.remove(accordionClasslist.NO_JS);
+    accordion.querySelector(accordionClasslist.TOGGLE).addEventListener('click', () => {
+      if (accordion.classList.contains(accordionClasslist.OPENED)) {
+        accordion.classList.remove(accordionClasslist.OPENED);
+        return;
+      }
+      const openedSection = [...accordions].find((section) => section.classList.contains(accordionClasslist.OPENED));
+      if (openedSection) {
+        openedSection.classList.remove(accordionClasslist.OPENED);
+      }
+      accordion.classList.add(accordionClasslist.OPENED);
+    });
   }
 })();
 
@@ -36,8 +48,10 @@
     OVERLAY: '.modal__overlay',
   };
 
+  window.modal = {};
 
-  window.modal = (modalElement, openButton, action) => {
+
+  window.modal.init = (modalElement, openButton, action) => {
     openButton.addEventListener('click', () => {
       modalElement.classList.add(ClassName.SHOW_ELEMENT);
       document.body.classList.add('lock');
@@ -76,13 +90,15 @@
 
   const formatTel = ([...tel]) => {
     let result = TEL_MASK;
-    for (let number of tel.slice(3).filter(Number)) {
+    for (let number of tel.slice(3).filter(isFinite)) {
       result = result.replace('x', number);
     }
     return result.indexOf('x') > 0 ? result.slice(0, result.indexOf('x')) : result;
   };
 
-  window.validation = (telInputElement) => {
+  window.validation = {};
+
+  window.validation.initTel = (telInputElement) => {
     let isErasing = false;
 
     const documentKeydownHandler = (evt) => {
@@ -127,8 +143,8 @@
     TABLET_MAX: 1023,
   };
 
-  const textBlockToEllipsize = document.querySelector('.info__wrapper p:last-of-type');
-  const initialTextContent = textBlockToEllipsize.innerText;
+  const textBlockToEllipsize = document.querySelector('.info__text-bottom p');
+  const initialTextContent = textBlockToEllipsize && textBlockToEllipsize.innerText;
 
   const ellipsize = (element, wordSeparator) => {
     const words = initialTextContent.split(' ');
@@ -136,18 +152,19 @@
     element.innerText = words.slice(0, indexOfSepearator).join(' ') + '..';
   };
 
-  const screenSizeChangeHandler = () => {
-    if (document.documentElement.clientWidth <= Breakpoints.TABLET_MAX) {
+  const initEllipsize = () => {
+    if (document.documentElement.clientWidth <= Breakpoints.TABLET_MAX && textBlockToEllipsize.dataset.wordSeparator) {
       ellipsize(textBlockToEllipsize, textBlockToEllipsize.dataset.wordSeparator);
       return;
     }
     textBlockToEllipsize.innerText = initialTextContent;
   };
 
-
-  window.addEventListener('resize', screenSizeChangeHandler);
-
-  window.addEventListener('orientationchange', screenSizeChangeHandler);
+  window.common.startActionWithCheck([textBlockToEllipsize], () => {
+    initEllipsize();
+    window.addEventListener('resize', initEllipsize);
+    window.addEventListener('orientationchange', initEllipsize);
+  });
 })();
 
 'use strict';
@@ -173,21 +190,34 @@
   const activateLocalStorage = (formElement, nameInputElement, telInputElement, textMessageElement) => {
     if (isStorageSupport) {
       if (storageName) {
-        nameInputElement.value = storageName;
+        window.common.startActionWithCheck([nameInputElement], () => {
+          nameInputElement.value = storageName;
+        });
+
       }
       if (storageTel) {
-        telInputElement.value = storageTel;
+        window.common.startActionWithCheck([telInputElement], () => {
+          telInputElement.value = storageTel;
+        });
       }
       if (storageMessage) {
-        textMessageElement.value = storageMessage;
+        window.common.startActionWithCheck([textMessageElement], () => {
+          textMessageElement.value = storageMessage;
+        });
       }
     }
     formElement.addEventListener('submit', () => {
-      localStorage.setItem('user-name', nameInputElement.value);
-      localStorage.setItem('user-tel', telInputElement.value);
-      if (textMessageElement.value) {
-        localStorage.setItem('user-message', textMessageElement.value);
-      }
+      window.common.startActionWithCheck([nameInputElement], () => {
+        localStorage.setItem('user-name', nameInputElement.value);
+      });
+      window.common.startActionWithCheck([telInputElement], () => {
+        localStorage.setItem('user-tel', telInputElement.value);
+      });
+      window.common.startActionWithCheck([textMessageElement], () => {
+        if (textMessageElement.value) {
+          localStorage.setItem('user-message', textMessageElement.value);
+        }
+      });
     });
   };
 
@@ -196,17 +226,27 @@
     const telInputElement = feedbackFormElement.querySelector('[id^="feedback-tel"]');
     const textMessageElement = feedbackFormElement.querySelector('[id^="feedback-message"]');
     activateLocalStorage(feedbackFormElement, nameInputElement, telInputElement, textMessageElement);
-    window.validation(telInputElement)();
+    window.common.startActionWithCheck([telInputElement], () => {
+      window.validation.initTel(telInputElement)();
+    });
   }
+
 })();
 
 'use strict';
 
 (function () {
   const feedbackModalElement = document.querySelector('.feedback--modal');
-  const modalNameInputElement = feedbackModalElement.querySelector('#feedback-name-modal');
+  const modalNameInputElement = feedbackModalElement && feedbackModalElement.querySelector('#feedback-name-modal');
   const openFeedbackModalElement = document.querySelector('.header__callback');
 
-  const initModal = window.modal;
-  initModal(feedbackModalElement, openFeedbackModalElement, () => modalNameInputElement.focus());
+  const initModal = window.modal.init;
+
+  const setFocus = () => {
+    window.common.startActionWithCheck([modalNameInputElement], () => modalNameInputElement.focus());
+  };
+
+  window.common.startActionWithCheck([feedbackModalElement, openFeedbackModalElement], () => {
+    initModal(feedbackModalElement, openFeedbackModalElement, setFocus);
+  });
 })();
