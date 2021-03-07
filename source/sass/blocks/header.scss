@@ -47,19 +47,6 @@
 .header__contact {
   margin-left: 4.58vw;
 
-  a {
-    display: flex;
-    align-items: center;
-    line-height: 17.92px;
-
-    &:hover,
-    &:focus {
-      svg {
-        fill: $white;
-      }
-    }
-  }
-
   svg {
     margin-right: 20px;
   }
@@ -95,6 +82,19 @@
 
   @media (max-width: $mobile-width-max) {
     margin-left: 7.3vw;
+  }
+}
+
+.header__contact-link {
+  display: flex;
+  align-items: center;
+  line-height: 17.92px;
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: $white;
+    }
   }
 }
 

@@ -96,13 +96,13 @@
 .footer__social-item {
   margin-right: 16px;
   margin-bottom: 8px;
+}
 
-  a {
-    display: flex;
-  }
+.footer__social-link {
+  display: flex;
 
-  a:hover,
-  a:focus {
+  &:hover,
+  &:focus {
     svg {
       fill: gray;
     }
