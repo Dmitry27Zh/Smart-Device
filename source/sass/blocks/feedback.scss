@@ -61,13 +61,6 @@
       padding: 13px 24px;
     }
 
-    textarea {
-      margin-top: 0;
-      margin-bottom: 30px;
-      padding: 13px 24px;
-      height: 104px;
-    }
-
     label[for="feedback-approval"],
     label[for="feedback-modal-approval"] {
       padding-left: 52px;
@@ -150,6 +143,15 @@
     }
   }
 
+  &--modal {
+    textarea {
+      margin-top: 0;
+      margin-bottom: 30px;
+      padding: 13px 24px;
+      height: 104px;
+    }
+  }
+
   @media (max-width: $tablet-width-max) {
     textarea {
       height: 159px;
@@ -220,20 +222,20 @@
       border-right: none;
       transform: rotate(-45deg);
     }
+  }
 
-    &--modal {
-      flex-direction: column;
+  &--modal {
+    flex-direction: column;
 
-      input,
-      button,
-      label {
-        width: 100%;
-        margin-bottom: 30px;
-      }
+    input,
+    button,
+    label {
+      width: 100%;
+      margin-bottom: 30px;
+    }
 
-      label {
-        margin-bottom: 0;
-      }
+    label {
+      margin-bottom: 0;
     }
   }
 
