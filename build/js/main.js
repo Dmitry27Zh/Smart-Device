@@ -52,7 +52,8 @@
 
 
   window.modal.init = (modalElement, openButton, action) => {
-    openButton.addEventListener('click', () => {
+    openButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
       modalElement.classList.add(ClassName.SHOW_ELEMENT);
       document.body.classList.add('lock');
       if (action) {
@@ -149,7 +150,7 @@
   const ellipsize = (element, wordSeparator) => {
     const words = initialTextContent.split(' ');
     const indexOfSepearator = words.indexOf(wordSeparator);
-    element.innerText = words.slice(0, indexOfSepearator).join(' ') + '..';
+    element.innerText = words.slice(0, indexOfSepearator + 1).join(' ') + '..';
   };
 
   const initEllipsize = () => {

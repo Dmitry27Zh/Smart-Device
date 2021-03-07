@@ -74,7 +74,7 @@
   }
 
   @media (max-width: $tablet-width-max) {
-    padding: 65px 25px 22px;
+    padding: 65px 25px 24px;
     border-left-width: 2px;
     width: 47.7%;
 
@@ -89,6 +89,10 @@
 
     &--confidentiality {
       padding-right: 17px;
+
+      h3 {
+        margin-bottom: 15px;
+      }
     }
 
     &--price {

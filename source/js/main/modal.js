@@ -11,7 +11,8 @@
 
 
   window.modal.init = (modalElement, openButton, action) => {
-    openButton.addEventListener('click', () => {
+    openButton.addEventListener('click', (evt) => {
+      evt.preventDefault();
       modalElement.classList.add(ClassName.SHOW_ELEMENT);
       document.body.classList.add('lock');
       if (action) {
