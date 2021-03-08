@@ -42,7 +42,7 @@ gulp.task('server', function () {
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css'));
   gulp.watch('source/img/icon-*.svg', gulp.series('sprite', 'html', 'refresh'));
   gulp.watch('source/*.html', gulp.series('html', 'refresh'));
-  gulp.watch('source/**/*.js', gulp.series('javascript', 'refresh'));
+  gulp.watch('source/js/main/*.js', gulp.series('javascript', 'refresh'));
 });
 
 gulp.task('refresh', function (done) {
@@ -90,7 +90,7 @@ gulp.task('javascript', function () {
     'source/js/main/modal.js',
     'source/js/main/validation.js',
     'source/js/main/text.js',
-    'source/js/main/feedbackForm.js',
+    'source/js/main/feedback-form.js',
     'source/js/main/main.js',
   ])
       .pipe(concat('main.js'))

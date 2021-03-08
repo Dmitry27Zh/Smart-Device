@@ -15,26 +15,26 @@
 'use strict';
 
 (function () {
-  const accordionClasslist = {
+  const accordionClassList = {
     accordion: '.accordion',
     TOGGLE: '.accordion__toggle',
     NO_JS: 'accordion--no-js',
     OPENED: 'accordion--opened',
   };
-  const accordions = document.querySelectorAll(accordionClasslist.accordion);
+  const accordions = document.querySelectorAll(accordionClassList.accordion);
 
   for (let accordion of accordions) {
-    accordion.classList.remove(accordionClasslist.NO_JS);
-    accordion.querySelector(accordionClasslist.TOGGLE).addEventListener('click', () => {
-      if (accordion.classList.contains(accordionClasslist.OPENED)) {
-        accordion.classList.remove(accordionClasslist.OPENED);
+    accordion.classList.remove(accordionClassList.NO_JS);
+    accordion.querySelector(accordionClassList.TOGGLE).addEventListener('click', () => {
+      if (accordion.classList.contains(accordionClassList.OPENED)) {
+        accordion.classList.remove(accordionClassList.OPENED);
         return;
       }
-      const openedSection = [...accordions].find((section) => section.classList.contains(accordionClasslist.OPENED));
+      const openedSection = [...accordions].find((section) => section.classList.contains(accordionClassList.OPENED));
       if (openedSection) {
-        openedSection.classList.remove(accordionClasslist.OPENED);
+        openedSection.classList.remove(accordionClassList.OPENED);
       }
-      accordion.classList.add(accordionClasslist.OPENED);
+      accordion.classList.add(accordionClassList.OPENED);
     });
   }
 })();
@@ -149,8 +149,8 @@
 
   const ellipsize = (element, wordSeparator) => {
     const words = initialTextContent.split(' ');
-    const indexOfSepearator = words.indexOf(wordSeparator);
-    element.innerText = words.slice(0, indexOfSepearator + 1).join(' ') + '..';
+    const indexOfSeparator = words.indexOf(wordSeparator);
+    element.innerText = words.slice(0, indexOfSeparator + 1).join(' ') + '..';
   };
 
   const initEllipsize = () => {
@@ -250,4 +250,6 @@
   window.common.startActionWithCheck([feedbackModalElement, openFeedbackModalElement], () => {
     initModal(feedbackModalElement, openFeedbackModalElement, setFocus);
   });
+
+  console.log(window.smoothscroll);
 })();

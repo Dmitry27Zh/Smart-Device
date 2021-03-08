@@ -11,8 +11,8 @@
 
   const ellipsize = (element, wordSeparator) => {
     const words = initialTextContent.split(' ');
-    const indexOfSepearator = words.indexOf(wordSeparator);
-    element.innerText = words.slice(0, indexOfSepearator + 1).join(' ') + '..';
+    const indexOfSeparator = words.indexOf(wordSeparator);
+    element.innerText = words.slice(0, indexOfSeparator + 1).join(' ') + '..';
   };
 
   const initEllipsize = () => {
