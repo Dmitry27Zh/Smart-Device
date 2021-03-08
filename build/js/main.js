@@ -251,5 +251,4 @@
     initModal(feedbackModalElement, openFeedbackModalElement, setFocus);
   });
 
-  console.log(window.smoothscroll);
 })();
