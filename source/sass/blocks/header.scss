@@ -41,11 +41,21 @@
   flex-wrap: wrap;
   align-items: center;
   margin-left: -4.58vw;
-  max-width: 870px;
+  max-width: 61.65%;
+  margin-bottom: -10px;
+
+  @media (max-width: $tablet-width-max) {
+    margin-left: -4.3vw;
+  }
+
+  @media (max-width: $mobile-width-max) {
+    margin-left: -7.3vw;
+  }
 }
 
 .header__contact {
   margin-left: 4.58vw;
+  margin-bottom: 10px;
 
   svg {
     margin-right: 20px;
