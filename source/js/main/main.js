@@ -15,4 +15,5 @@
     initModal(feedbackModalElement, openFeedbackModalElement, setFocus);
   });
 
+  window.checkWebpSupport();
 })();
