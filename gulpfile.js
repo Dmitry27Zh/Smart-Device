@@ -92,6 +92,7 @@ gulp.task('javascript-main', function () {
     'source/js/main/validation.js',
     'source/js/main/text.js',
     'source/js/main/feedback-form.js',
+    'source/js/main/smooth-scroll.js',
     'source/js/main/main.js',
   ])
       .pipe(concat('main.js'))
