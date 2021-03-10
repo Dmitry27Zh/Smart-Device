@@ -61,8 +61,7 @@
       padding: 13px 24px;
     }
 
-    label[for="feedback-approval"],
-    label[for="feedback-modal-approval"] {
+    label[for^="feedback-approval"] {
       padding-left: 52px;
       margin-top: 4px;
 
@@ -76,8 +75,10 @@
     }
   }
 
-  @media (max-width: 1125px) {
-    padding-left: 40%;
+  @media (min-width: $desktop-width-min) and (max-width: 1125px) {
+    &:not(&--modal) {
+      padding-left: 40%;
+    }
   }
 
   @media (max-width: $tablet-width-max) {
@@ -107,6 +108,7 @@
     box-sizing: border-box;
     padding: 14px 16px;
     border: none;
+    border-radius: 0;
     background-color: rgba($white, 0.1);
     font: inherit;
     color: $white;
@@ -116,8 +118,7 @@
     &:focus {
       background-color: rgba($white, 0.4);
 
-      + label[for="feedback-approval"],
-      + label[for="feedback-modal-approval"] {
+      + label[for^="feedback-approval"] {
         opacity: 0.4;
       }
     }
@@ -183,20 +184,19 @@
     width: 47.36%;
   }
 
-  input:checked + label[for="feedback-approval"],
-  input:checked + label[for="feedback-modal-approval"] {
+  input:checked + label[for^="feedback-approval"] {
     &::after {
       display: block;
     }
   }
 
-  label[for="feedback-approval"],
-  label[for="feedback-modal-approval"] {
+  label[for^="feedback-approval"] {
     position: relative;
     box-sizing: border-box;
     padding-left: 43px;
     font-size: 14px;
     line-height: 15.68px;
+    cursor: pointer;
 
     &::before,
     &::after {
@@ -221,6 +221,14 @@
       border-top: none;
       border-right: none;
       transform: rotate(-45deg);
+    }
+  }
+
+  button {
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
     }
   }
 

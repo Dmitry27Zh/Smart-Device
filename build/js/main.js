@@ -25,7 +25,7 @@
 
   for (let accordion of accordions) {
     accordion.classList.remove(accordionClassList.NO_JS);
-    accordion.querySelector(accordionClassList.TOGGLE).addEventListener('click', () => {
+    accordion.querySelector(accordionClassList.TOGGLE).parentElement.addEventListener('click', () => {
       if (accordion.classList.contains(accordionClassList.OPENED)) {
         accordion.classList.remove(accordionClassList.OPENED);
         return;
@@ -226,9 +226,16 @@
     const nameInputElement = feedbackFormElement.querySelector('[id^="feedback-name"]');
     const telInputElement = feedbackFormElement.querySelector('[id^="feedback-tel"]');
     const textMessageElement = feedbackFormElement.querySelector('[id^="feedback-message"]');
+    const approvalElement = feedbackFormElement.querySelector('[id^="feedback-approval"]');
+    const submitButtonElement = feedbackFormElement.querySelector('[type="submit"]');
     activateLocalStorage(feedbackFormElement, nameInputElement, telInputElement, textMessageElement);
     window.common.startActionWithCheck([telInputElement], () => {
       window.validation.initTel(telInputElement)();
+    });
+    window.common.startActionWithCheck([approvalElement, submitButtonElement], () => {
+      approvalElement.addEventListener('change', () => {
+        submitButtonElement.disabled = !approvalElement.checked;
+      });
     });
   }
 

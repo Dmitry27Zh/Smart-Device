@@ -18,6 +18,7 @@
 .footer__wrapper {
   display: flex;
   flex-wrap: wrap;
+  overflow-x: visible;
 
   @media (max-width: $tablet-width-max) {
     padding: 0;
@@ -30,6 +31,7 @@
 
 .footer__group {
   width: 25%;
+  overflow-x: visible;
 
   p {
     display: none;
@@ -169,13 +171,15 @@
 
   @media (max-width: $mobile-width-max) {
     border-bottom: 1px solid rgba($special-gray, 0.2);
-    padding-top: 28px;
-    padding-bottom: 23px;
 
     h2 {
+      position: relative;
+      left: -4.687vw;
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
+      padding: 29px 4.687vw 28px;
+      margin-bottom: 0;
     }
 
     &--nav {
@@ -185,6 +189,10 @@
     &--address {
       margin: 0;
       width: auto;
+
+      p {
+        padding-right: 5%;
+      }
     }
   }
 }
@@ -223,7 +231,8 @@
 .footer__section-inner {
   @media (max-width: $mobile-width-max) {
     display: none;
-    margin-top: 31px;
+    margin-top: 8px;
+    padding-bottom: 23px;
   }
 }
 
@@ -249,6 +258,12 @@
 
   p {
     margin: 0;
+  }
+
+  @media (max-width: 1030px) {
+    a {
+      margin-left: 5vw;
+    }
   }
 
   @media (max-width: $tablet-width-max) {

@@ -5,9 +5,11 @@
   width: 100%;
   max-width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-top: 33px;
   color: $white;
+  overflow-x: visible;
 
   @media (max-width: $tablet-width-max) {
     padding-top: 20px;
@@ -19,7 +21,7 @@
 }
 
 .header__logo {
-  margin-right: auto;
+  margin-right: 20px;
 }
 
 .header__logo-desktop {
@@ -40,11 +42,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: -4.58vw;
+  margin-left: auto;
+  margin-right: -4.58vw;
   max-width: 61.65%;
   margin-bottom: -10px;
 
   @media (max-width: $tablet-width-max) {
+    margin-right: 0;
     margin-left: -4.3vw;
   }
 
@@ -54,7 +58,7 @@
 }
 
 .header__contact {
-  margin-left: 4.58vw;
+  margin-right: 4.58vw;
   margin-bottom: 10px;
 
   svg {
@@ -69,6 +73,7 @@
 
   @media (max-width: $tablet-width-max) {
     font-size: 0;
+    margin-right: 0;
     margin-left: 4.3vw;
 
     &--mail {

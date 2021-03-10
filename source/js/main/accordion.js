@@ -11,7 +11,7 @@
 
   for (let accordion of accordions) {
     accordion.classList.remove(accordionClassList.NO_JS);
-    accordion.querySelector(accordionClassList.TOGGLE).addEventListener('click', () => {
+    accordion.querySelector(accordionClassList.TOGGLE).parentElement.addEventListener('click', () => {
       if (accordion.classList.contains(accordionClassList.OPENED)) {
         accordion.classList.remove(accordionClassList.OPENED);
         return;

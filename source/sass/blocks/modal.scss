@@ -3,8 +3,13 @@
   position: fixed;
   z-index: 100;
 
-  &--show {
+  &--show,
+  &--full {
     display: block;
+  }
+
+  @media (max-width: $tablet-width-max) {
+    display: none;
   }
 }
 
@@ -56,6 +61,8 @@
 
   &:hover,
   &:focus {
+    cursor: pointer;
+
     &::before,
     &::after {
       opacity: 0.5;
